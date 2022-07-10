@@ -32,7 +32,7 @@ def signup_post():
     print(get_db().find({}))
     
     # go to the dashboard/profile page
-    return redirect(url_for('home')) 
+    return redirect(url_for('dashboard', username = username))
 
 @app.route('/login', methods=['POST'])
 def login_post():
@@ -51,17 +51,20 @@ def login_post():
     print(get_db().find({}))
     
     # go to the dashboard/profile page
-    return redirect(url_for('home')) 
+    return redirect(url_for('dashboard', username = username)) 
 
     
 @app.route('/failed_auth')
 def failed_auth():
     return render_template('failed_auth.html')
 
-
 @app.route('/login')
 def login_page():
     return render_template('login.html')
+
+@app.route('/dashboard/<username>')
+def dashboard(username):
+    return render_template('dashboard.html', username = username)
 
 # run programmatically
 if __name__ == "__main__":
