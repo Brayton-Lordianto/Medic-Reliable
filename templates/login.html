@@ -2,21 +2,20 @@
 <html>
 <body>
 
-<h2>HTML Forms</h2>
+<h2>Login</h2>
 <div class="form-container">
     <form method='POST' action='{{ url_for("login_page") }}'>
         <label class="label1">Username:</label><br>
 
         <input type="text" id="fusername" name="fusername" value="John" class="username"><br>
         
-        <label class="label2">Last name:</label><br>
+        <label class="label2">Password:</label><br>
         
         <input type="text" id="fpassword" name="fpassword" value="Doe" class="password"><br><br>
         
         <input type="submit" class="btn" value="Submit">
     </form> 
 </div>
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
 
 </body>
 </html>
