@@ -9,7 +9,7 @@ app = Flask(__name__)
 # route for home
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('test.pug')
 
 @app.route('/signup')
 def signup_page():
