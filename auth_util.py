@@ -29,7 +29,7 @@ def signup(username, password):
     }
     
     account_collection.insert_one(doc)
-    return True, None
+    return True, account_collection.find_one({ username_field : username })
 
 
 # login using username and password -> (Success, Id)

@@ -4,11 +4,15 @@
 
 <h2>HTML Forms</h2>
 <div class="form-container">
-    <form action="/action_page.php">
-        <label class="label1"  for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="John" class="username"><br>
-        <label class="label2" for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe" class="password"><br><br>
+    <form method='POST' action='{{ url_for("signup_page") }}'>
+        <label class="label1">Username:</label><br>
+
+        <input type="text" id="fusername" name="fusername" value="John" class="username"><br>
+        
+        <label class="label2">Last name:</label><br>
+        
+        <input type="text" id="fpassword" name="fpassword" value="Doe" class="password"><br><br>
+        
         <input type="submit" class="btn" value="Submit">
     </form> 
 </div>
