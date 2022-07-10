@@ -1,22 +1,23 @@
 import requests
 import json
 
-# upload file 
-def upload():
+# upload a file 
+def upload(file, filename):
     url = "https://app.zeeve.io/zdfs-api/api/v1/file/upload"
 
-    payload={'files': '/app.py',
-    'name': 'app.py',
+    payload={
+    'files': 'file',
+    'name': 'filename',
     'isDirectory': 'false'}
     files=[
 
     ]
     headers = {
-        'Authorization': 'Bearer 1829a49867f003274f79ad4f20295f885fca7dc6e89b6d8a'
+        'Authorization': 'Bearer d5edea4f4c1341d7daacec386e43746d2ee76082518b6b1b'
     }
 
     response = requests.request("POST", url, headers=headers, data=payload, files=files)
 
-    print(response.text, 'hi')
+    print(response.text)
 
 upload()
